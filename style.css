@@ -500,6 +500,97 @@ body {
 
 
 
+
+
+
+
+
+
+
+
+/* Page : Pseudo-elements */
+
+
+
+
+.navbar-p-elements{
+	
+
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+	position: relative;
+	margin: 0 auto;
+	
+
+	top: 200px;
+    width: 250px;
+
+    background-color: #40386b;
+}
+
+.navbar-p-elements a{
+
+    padding: 10px;
+   
+
+    color: #000;
+    text-decoration: none;
+
+    display: block;
+	border: 1px solid rgb(0, 0, 0);
+	
+	transition: color .3s;
+}
+
+.navbar-p-elements a:hover{
+	color: #FFF;
+
+   
+}
+
+.navbar-p-elements a::before{ 
+    content: "";
+
+    display: inline-block;
+    
+    width: 15px;
+    height: 15px;
+
+
+	vertical-align: middle;
+    margin-right: 15px;
+	margin-top: -3px;
+
+    background: url(img/home.svg) center center / contain no-repeat;
+
+}
+
+.navbar-p-elements .navbar-actu::before, .navbar-p-elements .navbar-events::before{
+	background: url(img/calendar.svg) center center / contain no-repeat;
+}
+.navbar-p-elements .navbar-messages::before{
+	background: url(img/messages.svg) center center / contain no-repeat;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* Page : Grid */
 
 
