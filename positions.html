@@ -3,20 +3,129 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Review</title>
+        <title>Review - Positions</title>
         <link rel="stylesheet" href="style.css">
 
         <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
         <link rel="shortcut icon" href="img/icons.png" type="image/png"/>
     </head>
     <body>
-        <nav class="nav navpo">
+        <nav class="navbar nav-others-pages">
             <a href="index.html">Accueil</a>
             <a href="#" class="active">Positions</a>
+            <a href="background.html">Background</a>
             <a href="grid.html">Grid</a>
             <a href="flexbox.html">Flexbox</a>
             <a href="js.html">Javascript</a>
             <a href="contact.php">Contact</a>
         </nav>
+
+        <main class="content-pages">
+            <div class="card">
+                <h1 class="title-card">position: static;</h1>
+                <hr class="hr-card">
+
+                <div class="content-card">
+                    <p class="p-positions">Comportement normal (par défaut). L'élément est alors positionné dans le flux avec sa position. Les propriétés <span class="important-positions">top, right, bottom, left et z-index ne s'appliquent pas.</span></p><br>
+                    <p class="p-positions">Nous pouvons utiliser les <span class="important-positions">margin, padding, border...</span></p>
+                    <br>
+                    <img src="img/static.png" alt="" class="img-static">
+                </div>
+            </div>
+
+            <div class="card">
+                <h1 class="title-card">position: relative;</h1>
+                <hr class="hr-card">
+
+                <div class="content-card">
+                    <p class="p-positions">L'élément est positionné dans le <span class="important-positions">flux normal du document puis décalé, par rapport à lui-même,</span> selon les valeurs fournies par <span class="important-positions">top, right, bottom et left.</span> Le décalage n'a <span class="important-positions">pas d'impact sur la position des éléments.</span> Aussi, l'espace fourni à l'élément sur la page est le même que celui fourni avec static. </p><br>
+                    <p class="p-positions">
+                    Cette valeur crée un nouveau contexte d'empilement lorsque z-index ne vaut pas auto. L'effet de cette valeur n'est pas défini pour les éléments table-*-group, table-row, table-column, table-cell et table-caption.
+                    </p><br>
+                    <p class="p-positions">Nous pouvons utiliser les <span class="important-positions">margin, padding, border...</span></p>
+                    <br>
+                    <img src="img/relative.png" alt="" class="img-relative">
+                </div>
+            </div>
+
+            <div class="card">
+                <h1 class="title-card">position: absolute;</h1>
+                <hr class="hr-card">
+
+                <div class="content-card">
+                    <p class="p-positions">L'élément est <span class="important-positions">retiré du flux normal</span> et <span class="important-positions">aucun espace n'est créé pour l'élément sur la page.</span> Il est ensuite positionné par rapport à son ancêtre le plus proche qui est <span class="important-positions">positionné en relative,</span> s'il y en a un ou par rapport au bloc englobant initial sinon (body par exemple). La position finale de l'élément est déterminée par les valeurs de <span class="important-positions">top, right, bottom et left.</span></p><br>
+                    <p class="p-positions">
+                    Cette valeur <span class="important-positions">crée un nouveau contexte d'empilement lorsque z-index ne vaut pas auto (voir card z-index en bas de page).</span> Les éléments positionnés de façon absolue peuvent avoir des marges, ces marges ne fusionnent pas avec les autres marges.
+                    </p>
+                    <br>
+                    <p class="p-positions">Nous pouvons utiliser les <span class="important-positions">margin, padding, border...</span></p><br>
+                    <img src="img/absolute.png" alt="" class="img-absolute">
+                </div>
+            </div>
+
+            <div class="card">
+                <h1 class="title-card">position: fixed;</h1>
+                <hr class="hr-card">
+                
+                <div class="content-card">
+                    <p class="p-positions">L'élément est <span class="important-positions">retiré du flux normal</span> et <span class="important-positions">aucun espace n'est laissé pour l'élément.</span> <span class="important-positions">L'élément est positionné relativement au bloc englobant initial formé par la zone d'affichage (viewport),</span> sauf si un des ancêtres a une propriété transform, perspective ou filter qui est différente de none (voir la spécification sur les transformations CSS) ; dans ce cas, c'est l'élément ancêtre qui joue le rôle de bloc englobant. Cela empêche le défilement lorsque la page est parcourue (ou lors de l'impression, le positionne à cette position fixe pour chaque page). Cette valeur crée toujours un nouveau contexte d'empilement. Certaines incohérences existent entre les navigateurs quant au rôle de perspective et filter pour la définition du bloc englobant. La valeur finale de l'élément est déterminée par les valeurs de top, right, bottom et left.</p>
+                    <br>
+                    <p class="p-positions">Nous pouvons utiliser les <span class="important-positions">margin, padding, border...</span></p><br>
+                    <img src="img/fixed.png" alt="" class="img-fixed">-
+                </div>
+            </div>
+
+            <div class="card">
+                <h1 class="title-card">position: sticky;</h1>
+                <hr class="hr-card">
+
+                <div class="content-card"> 
+                    <p class="p-positions">La position de la boîte est calculée en fonction du <span class="important-positions">flux normal du document.</span> Ensuite, la boîte est <span class="important-positions">décalée par rapport à son ancêtre de défilement le plus proche et par rapport à son bloc englobant selon les valeurs de top, right, bottom et left.</span> Dans tous les cas, y compris avec les éléments table, cela n'affecte pas la position des autres éléments.</p><br>
+                    <img src="img/sticky.png" alt="" class="img-sticky"><br>
+                    <p class="p-positions">
+                        Cette valeur entraîne toujours la <span class="important-positions">création d'un nouveau contexte d'empilement.</span> On notera qu'un tel élément « adhèrera » à l'ancêtre le plus proche qui dispose d'un mécanisme de défilement (c'est-à-dire quand overflow vaut hidden, scroll, auto ou overlay) même si cet ancêtre n'est pas nécessairement l'ancêtre de défilement le plus proche : cette valeur ne fonctionnera pas dans un élément pour lequel la propriété vaut overflow: hidden ou auto (cf.: cette issue GitHub).
+                    </p>
+                    
+                   
+                </div>
+            </div>
+
+            <div class="card">
+                <h1 class="title-card">float: right;</h1>
+                <hr class="hr-card">
+
+                <div class="content-card"> 
+                    <img src="img/right.png" alt="" class="img-right">
+                    <p class="p-positions">Un mot-clé indiquant que l'élément doit <span class="important-positions">flotter du côté droit du bloc</span> qui le contient.</p>
+                    <p class="p-positions">Nous pouvons utiliser les <span class="important-positions">margin, padding, border...</span> et nous ne pouvons <span class="important-positions">pas déplacer l'élément avec top, bottom, right et left..</span></p>
+                </div>
+            </div>
+
+            <div class="card">
+                <h1 class="title-card">float: left;</h1>
+                <hr class="hr-card">
+
+                <div class="content-card"> 
+                    <img src="img/left.png" alt="" class="img-left">
+                    <p class="p-positions">Un mot-clé indiquant que l'élément doit <span class="important-positions">flotter du côté gauche du bloc</span> qui le contient.</p>
+                    <p class="p-positions">Nous pouvons utiliser les <span class="important-positions">margin, padding, border...</span> et nous ne pouvons <span class="important-positions">pas déplacer l'élément avec top, bottom, right et left..</span></p>
+                   
+    
+                </div>
+            </div>
+
+            <div class="card">
+                <h1 class="title-card">z-index: 0;</h1>
+                <hr class="hr-card">
+
+                <div class="content-card"> 
+                    <p class="p-positions">La propriété z-index définit <span class="important-positions">le « z-order » d'un élément positionné </span>et de ses éléments fils ou de ses éléments flexibles (les enfants d'un élément avec display: flex). Lorsque des éléments se chevauchent, le z-order <span class="important-positions">détermine l'ordre des différentes couches</span> que formeront les éléments. Généralement, un élément couvrira un autre élément si sa valeur de  z-index est supérieure à celle du deuxième élément.</p>
+                    <br>
+                    <img src="img/left.png" alt="" class="img-index-1">
+                    <img src="img/right.png" alt="" class="img-index-2">
+    
+                </div>
+            </div>
+        </main>
     </body>
 </html>
